@@ -4,20 +4,18 @@ import sys
 
 
 def get_arg() -> list[str]:
-    if len(sys.argv) != 2:
-        print('Usage: ex1.py <input_file>')
-        sys.exit(1)
+    # if len(sys.argv) != 2:
+    #     print('Usage: ex1.py <input_file>')
+    #     sys.exit(1)
 
-    file1 = open(sys.argv[1])
-    lines = file1.readlines()
+    list = []
+    file1 = eval(sys.stdin.read())
+    line: str = file1.readlines()
+    lines: str = file1.readlines(1)
 
-    count = 0
-    # Strips the newline character
-    for line in lines:
-        count += 1
-
-    return lines
-
+    list.append(line)
+    list.append(lines)
+    return list
 
 def check_storm(argument: list[str]) -> None:
     first_line: str = argument[0]
