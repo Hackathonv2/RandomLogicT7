@@ -4,22 +4,12 @@ import sys
 
 
 def get_arg() -> int:
-    if len(sys.argv) != 2:
-        print('Usage: ex1.py <input_file>')
-        sys.exit(1)
-
-    with open(sys.argv[1]) as f:
-        lines = f.readlines()
-
-    total = 0
-    for line in lines:
-        total += int(line)
-
+    total = eval(sys.stdin.read())
     return total
 
 
-def calc(nb: int) -> int:
-    temp_nb: int = nb
+def calc(number: int) -> int:
+    temp_nb: int = number
     for i in range(0, 4):
         if temp_nb % 3 == 0:
             temp_nb = int(temp_nb / 3)
